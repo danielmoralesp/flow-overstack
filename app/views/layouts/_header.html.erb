@@ -3,17 +3,16 @@
     <%= link_to "FlowOverStack", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-       
 
-       
-        <li>
-          <%= form_tag root_path, method:"get", :class => "form-inline search" do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Buscar" %>
-            <%= submit_tag "Buscar" %>
+
+          <%= form_tag root_path, method:"get", class: "navbar-form navbar-left" do %>
+          <div class="form-group">
+          <%= text_field_tag :search, params[:search], placeholder: "Buscar", class: "form-control" %>
+          </div>
+            <%= submit_tag "Buscar", class:"btn btn-default" %>
           <% end %>
-        </li>
 
-        
+
 
          <% if logged_in? %>
           <li class="dropdown">
@@ -32,11 +31,11 @@
          <% else %>
 
          <li><%= link_to 'Registrarse', signup_path %></li>
-         <li><%= link_to 'Ingresar', login_path %></li> 
+         <li><%= link_to 'Ingresar', login_path %></li>
 
          <% end %>
- 
-      
+
+
       </ul>
     </nav>
   </div>
