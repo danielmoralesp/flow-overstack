@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+  get 'signup' => 'users#new'
   root 'questions#index'
 
-  root 'questions#index'
-
-
+  resources :users
   resources :questions do
       resources :comments
   end
-
   resources :answers do
     resources :comments
   end

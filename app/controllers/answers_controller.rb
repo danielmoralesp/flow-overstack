@@ -8,8 +8,10 @@ class AnswersController < ApplicationController
    	redirect_to question_path(@question)
   end
 
+
 private
 	def answer_params
 		params.require(:answer).permit(:body, :question_id)
 	end
+
 end
