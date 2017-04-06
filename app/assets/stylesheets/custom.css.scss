@@ -50,21 +50,14 @@ input {
     float: left;
     margin-right: 10px;
     font-size: 1.7em;
-    color: #fff;
-    text-transform: uppercase;
+    color: black;
     letter-spacing: -1px;
     padding-top: 9px;
-    font-weight: bold;
-
-    &:hover {
-    color: #fff;
-    text-decoration: none;
-    }
 }
 
 h2 {
   padding-bottom: auto;
-  
+
 
 }
 
@@ -77,7 +70,7 @@ h2 {
 
 .answer {
 	padding: 5px;
-    
+
 }
 
 .comment {
