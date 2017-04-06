@@ -20,7 +20,6 @@ class QuestionsController < ApplicationController
         end
 	end
 
-
 	def edit
 		@question=Question.find(params[:id])
 	end
@@ -34,6 +33,10 @@ class QuestionsController < ApplicationController
 		end
 	end
 
+	def destroy
+		Question.find(params[:id]).destroy
+		redirect_to questions_path, notice: 'La pregunta fue eliminada con exitó'
+	end
 
 
 private
