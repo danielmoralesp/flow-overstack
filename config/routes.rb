@@ -6,6 +6,14 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   root 'questions#index'
 
+
+
+  post 'questions/:id/voteup' => 'questions#voteup', as: 'vote_question'
+  post 'questions/:id/delete_vote' => 'questions#delete_vote', as: 'delete_vote'
+
+  post 'answers/:id/voteup' => 'answers#voteup', as: 'vote_answer'
+  post 'answers/:id/delete_vote' => 'answers#delete', as: 'delete_vote_answer'
+
   resources :users
   resources :questions do
       resources :comments
