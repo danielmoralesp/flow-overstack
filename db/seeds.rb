@@ -13,3 +13,6 @@ User.create!(name:  "Example User",
              password:  "foobar",
              password_confirmation: "foobar",
              created_at: Time.zone.now)
+
+
+

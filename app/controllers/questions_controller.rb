@@ -1,15 +1,16 @@
-class QuestionsController < ApplicationController
-  def index
+	class QuestionsController < ApplicationController
+
+		def index
 			if params[:search]
 				@questions= Question.search(params[:search]).order("created_at DESC")
 			else
 				@questions = Question.order("created_at DESC")
-			end
+			end	
 		end
 
 		def show
 			@question= Question.find(params[:id])
-			@answer=Answer.new
+			@answer=Answer.new			
 		end
 
 		def new
@@ -20,12 +21,12 @@ class QuestionsController < ApplicationController
 		def create
 			@question= Question.new(question_params)
 			@question.user = current_user
-			if @question.save
+			if @question.save 
 				flash[:success]= 'La pregunta ha sido creada con exitó'
 				redirect_to @question
 			else
 				render :new
-			end
+			end 
 		end
 
 		def edit
@@ -36,9 +37,9 @@ class QuestionsController < ApplicationController
 			@question=Question.find(params[:id])
 			if @question.update(question_params)
 				redirect_to questions_path, notice:'La pregunta fue editada con exito'
-			else
-				render 'edit'
-			end
+			else	
+				render 'edit'			
+			end	
 		end
 
 		def destroy
@@ -66,5 +67,4 @@ class QuestionsController < ApplicationController
 		def question_params
 			params.require(:question).permit(:title, :description)
 		end
-
-end
+	end
