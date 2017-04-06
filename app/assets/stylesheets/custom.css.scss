@@ -5,12 +5,19 @@
 
 
 .question {
-	padding: 5px;
-    border-top: 2px solid #eaeaea;
+	padding: 10px;
+    border-bottom: 2px solid #eaeaea;
+
 }
 
 
 .answer {
 	padding: 5px;
     border-top: 1px solid #eaeaea;
+}
+
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
 }
